@@ -1,0 +1,99 @@
+Iniciar um repositorio
+git init
+
+Baixar Repositorio
+git clone link
+
+Baixar atualizaçoes servidor
+git pull
+
+listando caminho servidor
+git remote -v
+Adicionando o caminho do servidor permalink
+Caso tenhamos criado o repositório localmente antes de criar no servidor, podemos adicionar o caminho com o comando set-url.
+git remote set-url origin git://url
+
+Alterando o servidor permalink
+Para alterar o servidor onde hospedamos nosso repositório, usamos o mesmo comando set-url.
+git remote set-url origin git@github.com:woliveiras/woliveiras.github.io.git
+
+Adicionando alterações
+git add nome_arqui ou git add . para todos arquivos
+
+Também podemos rodar git commit com o parâmetro -am, onde adicionamos tudo de uma vez e já deixamos uma mensagem para o commit
+git commit -am "add tudo"
+
+Removendo arquivos do index
+git reset nome_do_arquivo
+
+Para remover tudo podemos fazer:
+git reset HEAD .
+Commit com Mensagem
+git commit -m "mensagem"
+
+Verificar Status
+git status
+
+Verificar o que foi alterado 
+git diff arquivo especifico git diff nome_arquivo
+
+Criar Branch 
+git branch nome_branch 
+Criar e Entrar nova Branch
+git checkout -b nome_branch / apenas trocar de Branch git checkout
+
+Delete Branch
+git branch -d nome
+
+Enviar nova branch servidor
+git push origin nome_branch / mandar todas novas branch git push --all origin
+
+Delete Branch remota
+git push origin :nome_branch
+
+Atualizar branch principal MERGE
+git merge nova_branch
+
+Enviar arquivos novo para servidor
+git push origin nome_branch
+
+Delete arquivo ou pasta
+git rm nome_arquivo_pasta / pasta com arquivos rm -r pasta
+
+Movendo ou Renomenado Arquivo ou Pasta
+git mv nome_arquivo_ou_pasta
+
+Reverte Alteracao
+git reset nome_arquivo / Desfazer tudo git reset HEAD .
+
+Desfazer Alteraçao para o ultimo commit
+git checkout nome_arquivo / Desfazer tudo git checkout .
+
+Desfazendo uma alteração, mas colocando ela em stage
+git reset --soft HEAD~1 / Onde HEAD~1 é relacionado ao último commit.
+
+Desfazendo para o último commit sem colocar as alterações em stage
+git reset --hard HEAD~1
+
+Desfazendo para um commit específico permalink
+Devemos procurar o hash do commit no histórico do Git e então executar:
+git revert hash "apenas os 5 primeiros numeros do hash"
+
+Desfazendo o último push
+git reset --hard HEAD~1 && git push -f origin master
+Ver LOG
+git log
+Podemos passar uma quantidade de commits que queremos olhar com o parâmetro -p
+git log -p -2 
+
+LOG resumido
+git log --pretty=oneline
+
+Exibindo o histórico por pessoa
+git log --author=nome_da_pessoa_ou_usuario
+
+Criar uma tag Git
+git tag 0.0.1 / listar TAG git tag/ TAG com mensagem git tag -1 0.0.1 -m "Versao 0,0,1"
+Criar uma tag a partir de um commit 
+git tag -a 0.0.1 b6120
+
