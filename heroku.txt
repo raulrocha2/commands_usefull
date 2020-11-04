@@ -1,0 +1,15 @@
+Heroku. Logar..
+heroku login
+
+Criar PRJ HEROKU
+heroku create
+
+Subir para o Heroku
+git push heroku master
+
+ver caminho servidor git ou heroku
+git remtote -v
+
+rodar comando python HEROKU
+heroku run python ....
+

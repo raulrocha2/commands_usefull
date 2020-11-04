@@ -1,0 +1,27 @@
+Criar VirtualEnv Python 3
+virtualenv -p python3 .
+python3 -m venv tutorial-env
+---------------------------------------------------
+Usando shell,
+
+1) Para excluir a tabela:
+
+python manage.py dbshell
+>> DROP TABLE {app_name}_{model_name}
+2) Para remover todos os dados da tabela:
+
+python manage.py shell
+>> from {app_name}.models import {model_name}
+>> {model_name}.objects.all().delete()
+
+--------------------------------------------------------
+Dentro de um gerente:
+
+def delete_everything(self):
+    Reporter.objects.all().delete()
+
+def drop_table(self):
+    cursor = connection.cursor()
+    table_name = self.model._meta.db_table
+    sql = "DROP TABLE %s;" % (table_name, )
+    cursor.execute(sql)
