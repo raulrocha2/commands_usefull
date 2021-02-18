@@ -4,8 +4,8 @@ import { Spinner } from 'react-bootstrap'
 function Loader() {
     return (
         <Spinner 
-            animation="border"
-            role="status"
+            animation='borderborder'
+            role='status'
             style={{
                 height: '100px',
                 width: '100px',
@@ -14,7 +14,7 @@ function Loader() {
 
             }}
         >
-            <span className='sr-only'>Loading..</span>
+            <span className='sr-only'>Loading...</span>
         </Spinner>
     )
 }
