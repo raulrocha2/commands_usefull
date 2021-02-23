@@ -4,8 +4,8 @@ import { Button, Row, Col, ListGroup, Image, Card } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import CheckoutSteps from '../components/CheckoutSteps'
 import Message from '../components/Message'
-import Loader from '../components/Loader'
 import { createOrder } from '../actions/orderActions'
+import { ORDER_CREATE_RESET } from '../constants/orderConstants'
 
 
 function PlaceOrderScreen({history}) {
@@ -28,6 +28,7 @@ function PlaceOrderScreen({history}) {
     useEffect(() => {
         if (success) {
             history.push(`/order/${order._id}`)
+            dispatch({ type: ORDER_CREATE_RESET })
             
         }
     }, [success, history])

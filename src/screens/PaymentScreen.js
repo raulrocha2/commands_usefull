@@ -33,7 +33,7 @@ function PaymentScreen({ history }) {
                             type='radio'
                             label='Payment Local'
                             name='paymentMethod'
-                            check
+                            
                             value='paylocal'
                             onChange={(e) => setPaymentMethod(e.target.value)}
                         ></Form.Check>
@@ -43,7 +43,7 @@ function PaymentScreen({ history }) {
                             type='radio'
                             label='PayPal or Credit Card'
                             name='paymentMethod'
-                            check
+                            checked
                             value='paypal'
                             onChange={(e) => setPaymentMethod(e.target.value)}
                         ></Form.Check>
