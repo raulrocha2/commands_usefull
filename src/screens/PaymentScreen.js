@@ -31,23 +31,15 @@ function PaymentScreen({ history }) {
                     <Col>
                         <Form.Check
                             type='radio'
-                            label='Payment Local'
-                            name='paymentMethod'
-                            
-                            value='paylocal'
-                            onChange={(e) => setPaymentMethod(e.target.value)}
-                        ></Form.Check>
-                    </Col>
-                    <Col>
-                        <Form.Check
-                            type='radio'
                             label='PayPal or Credit Card'
+                            id='paypal'
                             name='paymentMethod'
-                            checked
                             value='paypal'
                             onChange={(e) => setPaymentMethod(e.target.value)}
                         ></Form.Check>
                     </Col>
+
+                
                     
                 </Form.Group>
                 <Button type='submit' variant='primary'>
