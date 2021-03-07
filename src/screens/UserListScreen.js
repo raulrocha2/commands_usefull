@@ -4,10 +4,10 @@ import { Button, Table } from 'react-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import Loader from '../components/Loader'
 import Message from '../components/Message'
-import { ListUser } from '../actions/userActions'
+import { ListUser, DeleteUser } from '../actions/userActions'
 
 
-function UserListScreen({history}) {
+function UserListScreen({ history }) {
 
     const dispatch = useDispatch()
 
@@ -18,6 +18,9 @@ function UserListScreen({history}) {
     const userLogin = useSelector(state => state.userLogin)
     const { userInfo } = userLogin
 
+    const deleteUser = useSelector(state => state.deleteUser)
+    const { success:successDelete } = deleteUser
+
     useEffect(() => {
         if(userInfo && userInfo.isAdmin){
             dispatch(ListUser())
@@ -26,10 +29,11 @@ function UserListScreen({history}) {
         }
         
 
-    }, [dispatch, history])
+    }, [dispatch, history, successDelete, userInfo])
 
     const deleteHandler = (id) => {
-        console.log('Delete', id)
+        if(window.confirm('Are you sure you want delete ?'))
+        dispatch(DeleteUser(id))
     }
     return (
         <div>
@@ -59,7 +63,7 @@ function UserListScreen({history}) {
                                             <i className='fas fa-check' style={{ color: 'red' }}></i>
                                     )}</td>
                                     <td>
-                                        <LinkContainer to={`/admin/user/${user._id}`}>
+                                        <LinkContainer to={`/admin/user/${user._id}/edit`}>
                                             <Button variant='light' className='btn-sm'>
                                                 <i className='fas fa-edit'></i>
                                             </Button>

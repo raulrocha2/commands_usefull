@@ -9,10 +9,14 @@ import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import UserListScreen  from './screens/UserListScreen';
+import EditUserScreen  from './screens/EditUserScreen';
 import ShippingScreen from './screens/ShippingScreen';
 import PaymentScreen from './screens/PaymentScreen';
 import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
+import OrderListScreen from './screens/OrderListSreen';
+import ProductListScreen from './screens/ProductListScreen';
+import ProductEditScreen from './screens/ProductEditScreen';
 
 
 function App() {
@@ -25,8 +29,12 @@ function App() {
           <Route path='/login' component={LoginScreen}/>
           <Route path='/register' component={RegisterScreen}/>
           <Route path='/product/:id' component={ProductScreen} />
+          <Route path='/admin/productlist' component={ProductListScreen} />
+          <Route path='/admin/product/:id/edit' component={ProductEditScreen} />
           <Route path='/cart/:id?' component={CartScreen} />
+          <Route path='/admin/orderlist' component={OrderListScreen} />
           <Route path='/profile' component={ProfileScreen}/>
+          <Route path='/admin/user/:id/edit' component={EditUserScreen} />
           <Route path='/Shipping' component={ShippingScreen} />
           <Route path='/payment' component={PaymentScreen} />
           <Route path='/placeorder' component={PlaceOrderScreen} />
