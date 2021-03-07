@@ -97,3 +97,15 @@ git tag 0.0.1 / listar TAG git tag/ TAG com mensagem git tag -1 0.0.1 -m "Versao
 Criar uma tag a partir de um commit 
 git tag -a 0.0.1 b6120
 
+echo "# proshop_react_django" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:raulrocha2/proshop_react_django.git
+git push -u origin main
+
+git remote add origin git@github.com:raulrocha2/proshop_react_django.git
+git branch -M main
+git push -u origin main
+

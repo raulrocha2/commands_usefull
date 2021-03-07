@@ -1,0 +1,5 @@
+Create APP Rreact JS
+npx create-react-app . 
+create-react-app <my-react>
+-------------------------
+npm s

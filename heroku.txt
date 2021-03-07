@@ -13,3 +13,5 @@ git remtote -v
 rodar comando python HEROKU
 heroku run python ....
 
+Add novo Projeto ou Projeto renomeado
+git remote add heroku caminho do projeto
