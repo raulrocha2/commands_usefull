@@ -7,6 +7,7 @@ import Message from '../components/Message'
 import { listProducts } from '../actions/productActions'
 
 
+
 function HomeScreen({ history }) {
     
     const dispatch = useDispatch()
@@ -14,11 +15,11 @@ function HomeScreen({ history }) {
     const { error, loading, products } = productList
 
     let keyword = history.location.search
-
+    console.log(keyword)
     useEffect(() => {
-        dispatch(listProducts())
+        dispatch(listProducts(keyword))
         
-    }, [dispatch])
+    }, [dispatch, keyword])
     
     return (
         <div>

@@ -7,6 +7,7 @@ import {
     updateProductReducer, 
     deleteProductReducer,
     createProductReducer,
+    createProductReviewReducer,
  } from './reducers/productReducers'
 import { cartReducer } from './reducers/cartReducers'
 import { 
@@ -28,25 +29,29 @@ import {
 } from './reducers/orderReducers'
 
 const reducer = combineReducers({
-    productList: productListReducers,
-    productDetails: productDetailsReducer,
-    productCreate: createProductReducer,
-    productUpdate: updateProductReducer,
-    productDelete: deleteProductReducer,
-    cart: cartReducer,
-    userLogin: userLoginReducer,
-    userRegister: userRegisterReducer,
-    userDetail: userDetailReducer,
-    userUpdateProfile: userUpdateProfileReducer,
-    userList: userListReducer,
-    updateUser: adminUpdateUserReducer,
-    deleteUser: deleteUserReducer,
-    orderCreate: orderCreateReducer,
-    orderDetails: orderDetailsReducer,
-    orderPay: orderPayReducer,
-    orderDeliver: orderDelivereReducer,
-    adminListOrder: orderListAdminReducer,
-    mylistOrder: orderListMyReducer,
+    
+    productList         : productListReducers,
+    productDetails      : productDetailsReducer,
+    productCreate       : createProductReducer,
+    productUpdate       : updateProductReducer,
+    productDelete       : deleteProductReducer,
+    productCreateReview : createProductReviewReducer,
+
+    cart                : cartReducer,
+    userLogin           : userLoginReducer,
+    userRegister        : userRegisterReducer,
+    userDetail          : userDetailReducer,
+    userUpdateProfile   : userUpdateProfileReducer,
+    userList            : userListReducer,
+    updateUser          : adminUpdateUserReducer,
+    deleteUser          : deleteUserReducer,
+
+    orderCreate         : orderCreateReducer,
+    orderDetails        : orderDetailsReducer,
+    orderPay            : orderPayReducer,
+    orderDeliver        : orderDelivereReducer,
+    adminListOrder      : orderListAdminReducer,
+    mylistOrder         : orderListMyReducer,
     
 
     
@@ -59,7 +64,10 @@ const userInfoFromStorage = localStorage.getItem('userInfo') ?
     JSON.parse(localStorage.getItem('userInfo')) : null  
 
 const shippingAddressFromStorage = localStorage.getItem('shippingAddress') ?
+
     JSON.parse(localStorage.getItem('shippingAddress')) : {}
+
+
 
 const initialState = {
     cart: {
@@ -67,6 +75,7 @@ const initialState = {
         shippingAddress: shippingAddressFromStorage,
     },
     userLogin: {userInfo: userInfoFromStorage},
+    
     
 }
 
